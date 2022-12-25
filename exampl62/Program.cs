@@ -93,4 +93,5 @@ while (count < array1.Length - 1)
 
 array1[X, Y] = array1.Length; //заполняем последний элемент
 
+
 Printmatrix(array1);

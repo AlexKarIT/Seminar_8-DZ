@@ -90,5 +90,7 @@ for (int k = 0; k < m; k++)
     Sort(array1, k);
 }
 
+Console.WriteLine();
+Console.WriteLine("Упорядочиваем строки массива по убыванию ");
 
 Printmatrix(array1);

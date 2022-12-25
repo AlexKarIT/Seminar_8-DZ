@@ -23,41 +23,41 @@ double[,,] array1 = new double[m, n, t];
 
 double[,,] Сompletion(double[,,] inputMatrix, int minValue, int maxValue)
 {
-for (int i = 0; i < inputMatrix.GetLength(0); i++)
-{
-    for (int j = 0; j < inputMatrix.GetLength(1); j++)
+    for (int i = 0; i < inputMatrix.GetLength(0); i++)
     {
-        for (int k = 0; k < inputMatrix.GetLength(2); k++)
+        for (int j = 0; j < inputMatrix.GetLength(1); j++)
         {
-            array1[i, j, k] = new Random().Next(minValue, maxValue + 1);
+            for (int k = 0; k < inputMatrix.GetLength(2); k++)
+            {
+                array1[i, j, k] = new Random().Next(minValue, maxValue + 1);
+            }
         }
     }
-}
-return inputMatrix;
+    return inputMatrix;
 }
 
 
 //Метод печати трёхмерного массива
 
-void Printmatrix (double[,,] inputMatrix)
+void Printmatrix(double[,,] inputMatrix)
 {
-Console.WriteLine();
-for (int i = 0; i < inputMatrix.GetLength(0); i++)
-{
-    Console.WriteLine($"Слой {i}_______");
-    for (int j = 0; j < inputMatrix.GetLength(1); j++)
+    Console.WriteLine();
+    for (int i = 0; i < inputMatrix.GetLength(0); i++)
     {
-        for (int k = 0; k < inputMatrix.GetLength(2); k++)
+        Console.WriteLine($"Слой {i}_______");
+        for (int j = 0; j < inputMatrix.GetLength(1); j++)
         {
-            Console.Write($"{array1[i, j, k]} ( {i}, {j}, {k} ) \t");
+            for (int k = 0; k < inputMatrix.GetLength(2); k++)
+            {
+                Console.Write($"{array1[i, j, k]} ( {i}, {j}, {k} ) \t");
+            }
+            Console.WriteLine();
         }
         Console.WriteLine();
-    }   
-    Console.WriteLine();
-}
+    }
 
 }
 
 
 Сompletion(array1, 0, 99);
-Printmatrix (array1);
+Printmatrix(array1);
